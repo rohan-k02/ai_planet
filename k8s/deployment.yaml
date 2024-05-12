@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-test-deployment
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: todo-test
+  template:
+    metadata:
+      labels:
+        app: todo-test
+    spec:
+      containers:
+        - name: todo-test
+          image: unspecialfx/todo_test:blue 
+          ports:
+            - containerPort: 3000
