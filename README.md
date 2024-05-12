@@ -45,7 +45,7 @@ This repo contains the web app source code, the dockerfile, and the k8s files al
 
 - Create an Argo CD application to monitor the repository and automatically deploy changes to the Kubernetes cluster.
 
-    This command creates an app called todo-test that monitors the specified repo. It looks for kubernetes yaml files in the k8s folder. It uses the defuault 
+    This command creates an app called todo-test that monitors the specified repo. It looks for kubernetes yaml files in the k8s folder. It uses the default namespace and connects to the local Kubernetes cluster.
 
     ```bash
     argocd app create todo-test --repo https://github.com/rohan-k02/ai_planet.git --path k8s --dest-namespace default --dest-server https://kubernetes.default.svc --sync-policy auto
